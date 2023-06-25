@@ -2,10 +2,10 @@
 
 ## Feature
 
-- vite4.3
-- 可选的git钩子
-- typescript
-- vue3 + vue-router4.2 + pinia2.1 + element-plus2.3 + vueuse10.1
+- 🚀vite4.3
+- 🚗可选的git钩子
+- 🚆typescript
+- 🍔vue3 + vue-router4.2 + pinia2.1 + element-plus2.3 + vueuse10.1
 - 自动管理依赖更新
 - cz交互式提交message
 - 代码自动格式化
