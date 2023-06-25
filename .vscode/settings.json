@@ -1,0 +1,19 @@
+{
+  "cSpell.words": [
+    "antfu",
+    "Attributify",
+    "composables",
+    "iconify",
+    "ofetch",
+    "taze",
+    "typecheck",
+    "Unocss",
+    "unplugin",
+    "Vite",
+  ],
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": false
+}
