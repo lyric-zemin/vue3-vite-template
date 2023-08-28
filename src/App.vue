@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-import zhCn from 'element-plus/lib/locale/lang/zh-cn'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 </script>
 
 <template>
