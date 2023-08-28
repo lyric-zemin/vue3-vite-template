@@ -1,13 +1,14 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
+import Pages from 'unplugin-vue-router/vite'
 import Layouts from 'vite-plugin-vue-layouts'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
 
 export default defineConfig({
   resolve: {
@@ -24,18 +25,18 @@ export default defineConfig({
     },
   },
   plugins: [
+    // https://github.com/posva/unplugin-vue-router
+    Pages({ exclude: ['**/components/*.vue'], dts: 'src/types/typed-router.d.ts', routeBlockLang: 'yaml' }),
+
     // https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue
     Vue(),
-
-    // https://github.com/hannoeru/vite-plugin-pages
-    Pages({ exclude: ['**/components/*.vue'] }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     Layouts(),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      imports: ['vue', 'vue-router', '@vueuse/core'],
+      imports: ['vue', '@vueuse/core', VueRouterAutoImports],
       dirs: ['./src/composables'],
       dts: 'src/types/auto-imports.d.ts',
       vueTemplate: true,
