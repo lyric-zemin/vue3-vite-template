@@ -11,9 +11,12 @@
     "unplugin",
     "Vite"
   ],
+
   "editor.formatOnSave": false,
-  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
-  "typescript.preferences.autoImportFileExcludePatterns": [
-    "vue-router"
-  ]
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // Enable the ESlint flat config support
+  "eslint.experimental.useFlatConfig": true
 }
