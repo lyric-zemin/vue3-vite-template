@@ -15,11 +15,11 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "dependencies": {
-    "@vueuse/core": "^10.9.0",
     "element-plus": "^2.7.1",
     "ofetch": "^1.3.4",
     "pinia": "^2.1.7",
     "vue": "^3.4.23",
+    "vue-hooks-plus": "^1.8.9",
     "vue-router": "^4.3.2"
   },
   "devDependencies": {
@@ -29,6 +29,7 @@
     "@unocss/eslint-config": "^0.59.4",
     "@unocss/reset": "^0.59.4",
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vue-hooks-plus/resolvers": "^1.2.4",
     "conventional-changelog-cli": "^4.1.0",
     "czg": "^1.9.1",
     "eslint": "^9.1.0",

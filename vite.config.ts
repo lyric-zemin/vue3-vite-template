@@ -7,8 +7,8 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
-import VueDevTools from 'vite-plugin-vue-devtools'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import { VueHooksPlusResolver } from '@vue-hooks-plus/resolvers'
 
 export default defineConfig({
   resolve: {
@@ -36,11 +36,11 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports],
+      imports: ['vue', 'pinia', VueRouterAutoImports],
       dirs: ['./src/composables'],
       dts: 'src/types/auto-imports.d.ts',
       vueTemplate: true,
-      resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
+      resolvers: [ElementPlusResolver({ importStyle: 'sass' }), VueHooksPlusResolver()],
     }),
 
     // https://github.com/antfu/vite-plugin-components
@@ -52,8 +52,5 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
     Unocss(),
-
-    // https://github.com/webfansplz/vite-plugin-vue-devtools
-    VueDevTools(),
   ],
 })
