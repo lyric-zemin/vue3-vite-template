@@ -6,6 +6,8 @@
   <PageMain>
     Index Page
 
+    <img :src="IHello" width="90" m="l-[-10px]">
+
     <el-row class="mt-4">
       <el-button>Default</el-button>
       <el-button type="primary">
@@ -26,7 +28,3 @@
     </el-row>
   </PageMain>
 </template>
-
-<route lang="yaml">
-
-</route>
