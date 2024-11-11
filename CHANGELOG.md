@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/lyric-zemin/vue3-vite-template/compare/v0.3.0...v0.4.0) (2024-11-11)
+
+
+### Features
+
+* 支持自动导入图片路径/类型增强/支持服务代理 ([346557a](https://github.com/lyric-zemin/vue3-vite-template/commit/346557aa6297733ee57651c033adfb9c89dcfb6f))
+
+
+
 # [0.3.0](https://github.com/lyric-zemin/vue3-vite-template/compare/v0.1.0...v0.3.0) (2024-04-22)
 
 
