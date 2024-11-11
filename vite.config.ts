@@ -1,15 +1,15 @@
-import path from 'node:path'
+import { resolve } from 'node:path'
 import { cwd } from 'node:process'
-import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Pages from 'unplugin-vue-router/vite'
-import Layouts from 'vite-plugin-vue-layouts'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
+import AutoImport from 'unplugin-auto-import/vite'
 import Images from 'unplugin-vue-auto-img/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Components from 'unplugin-vue-components/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
+import Pages from 'unplugin-vue-router/vite'
+import { defineConfig, loadEnv } from 'vite'
+import Layouts from 'vite-plugin-vue-layouts'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, cwd()) as ImportMetaEnv
@@ -17,8 +17,8 @@ export default defineConfig(({ mode }) => {
   return {
     resolve: {
       alias: {
-        '~/': `${path.resolve(__dirname, 'src')}/`,
-        '#/': `${path.resolve(__dirname, 'src')}/types/`,
+        '~/': `${resolve(__dirname, 'src')}/`,
+        '#/': `${resolve(__dirname, 'src')}/types/`,
       },
     },
     css: {
@@ -39,7 +39,10 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       // https://github.com/posva/unplugin-vue-router
-      Pages({ exclude: ['**/components/*.vue'], dts: 'src/types/typed-router.d.ts', routeBlockLang: 'yaml' }),
+      Pages({
+        exclude: ['**/components/*.vue'],
+        dts: 'src/types/typed-router.d.ts',
+      }),
 
       // https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue
       Vue(),
@@ -50,7 +53,7 @@ export default defineConfig(({ mode }) => {
       // https://github.com/antfu/unplugin-auto-import
       AutoImport({
         imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports],
-        dirs: ['./src/composables'],
+        dirs: ['src/composables'],
         dts: 'src/types/auto-imports.d.ts',
         vueTemplate: true,
         resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
