@@ -1,0 +1,71 @@
+{
+  // 响应式基础
+  "ref": {
+    "prefix": "re",
+    "body": "const $1 = ref($2)",
+  },
+  "reactive": {
+    "prefix": "rea",
+    "body": "const $1 = reactive($2)",
+  },
+  "computed": {
+    "prefix": "com",
+    "body": "const $1 = computed(() => $2)",
+  },
+
+  // 响应式高级
+  "shallowRef": {
+    "prefix": ["shRe", "sha"],
+    "body": "const $1 = shallowRef($2)",
+  },
+  "shallowReactive": {
+    "prefix": "shRea",
+    "body": "const $1 = shallowReactive($2)",
+  },
+
+  // 响应式监听
+  "watch": {
+    "prefix": "wa",
+    "body": ["watch($1, () => { $2 })"],
+  },
+  "watchEffect": {
+    "prefix": ["waE", "we"],
+    "body": ["watchEffect(() => { $1 })"],
+  },
+
+  // 生命周期
+  "onMounted": {
+    "prefix": "onM",
+    "body": "onMounted(() => { $1 })",
+  },
+  "onUnmounted": {
+    "prefix": "onU",
+    "body": "onUnmounted(() => { $1 })",
+  },
+  "onActivated": {
+    "prefix": "onA",
+    "body": "onActivated(() => { $1 })",
+  },
+  "onDeactivated": {
+    "prefix": "onD",
+    "body": "onDeactivated(() => { $1 })",
+  },
+
+  // 单文件宏
+  "defineProps": {
+    "prefix": ["deP", "dp"],
+    "body": "const props = defineProps<$1>()",
+  },
+  "defineEmits": {
+    "prefix": "deE",
+    "body": "const emit = defineEmits([$1])",
+  },
+  "defineOptions": {
+    "prefix": "deO",
+    "body": "defineOptions({$1})",
+  },
+  "defineExpose": {
+    "prefix": "deEx",
+    "body": "defineExpose({$1})",
+  },
+}
